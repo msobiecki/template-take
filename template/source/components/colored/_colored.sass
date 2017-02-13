@@ -1,0 +1,67 @@
+.colored
+  margin-bottom: 25px
+
+  &__container
+    +container
+  &__box
+    display: flex
+    flex-wrap: wrap
+
+  &__item
+    width: 33.33%
+    padding: 40px
+    color: white
+    +MAX(969px)
+      padding: 20px
+    +MAX(767px)
+      width: 100%
+      padding: 10px 15px
+
+    &.-large
+      width: 66.66%
+      +MAX(767px)
+        width: 100%
+
+    &:nth-of-type(6n + 1)
+      background-color: #f5989d
+    &:nth-of-type(6n + 2)
+      background-color: #615f7d
+    &:nth-of-type(6n + 3)
+      background-color: #82ca9c
+    &:nth-of-type(6n + 4)
+      background-color: #bd8cbf
+    &:nth-of-type(6n + 5)
+      background-color: #368185
+    &:nth-of-type(6n + 6)
+      background-color: #192431
+
+  &__title
+    +fontOpenSans
+    font-size: 30px
+    font-weight: 600
+    color: white
+    margin-bottom: 15px
+    cursor: default
+    +MAX(767px)
+      font-size: 22px
+      margin-bottom: 10px
+
+  &__text
+    +fontOpenSans
+    font-size: 13px
+    font-weight: 400
+    color: white
+    margin-bottom: 15px
+    cursor: default
+
+  &__link
+    +fontOpenSans
+    font-size: 13px
+    font-weight: 700
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    color: white
+    i
+      font-size: 12px
+      margin-left: 5px

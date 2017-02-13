@@ -1,0 +1,29 @@
+.textfield
+  margin-bottom: 25px
+
+  &__container
+    +container
+
+  &__title
+    +fontOpenSans
+    font-size: 35px
+    font-weight: 600
+    color: #959595
+    margin-bottom: 25px
+    cursor: default
+    +MAX(767px)
+      font-size: 22px
+      margin-bottom: 10px
+
+  &__content
+    +CMS
+    +fontOpenSans
+    font-size: 14px
+    font-weight: 400
+    color: #959595
+    column-count: 2
+    text-align: justify
+    cursor: default
+    +MAX(767px)
+      column-count: 1
+      font-size: 12px

@@ -1,0 +1,47 @@
+.details
+  margin-bottom: 25px
+
+  &__container
+    +container
+
+  &__title
+    +fontOpenSans
+    font-size: 35px
+    font-weight: 600
+    color: #222626
+    margin-bottom: 25px
+    cursor: default
+    +MAX(767px)
+      font-size: 22px
+      margin-bottom: 10px
+
+  &__box
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -15px
+
+  &__item
+    width: 25%
+    padding: 0 15px
+    +MAX(969px)
+      width: 50%
+      margin-bottom: 15px
+    +MAX(767px)
+      width: 100%
+
+  &__subtitle
+    +fontOpenSans
+    font-size: 13px
+    font-weight: 600
+    color: #67676d
+    margin-bottom: 5px
+    cursor: default
+
+  &__text
+    +fontOpenSans
+    font-size: 14px
+    font-weight: 400
+    color: #959595
+    margin-bottom: 5px
+    text-align: justify
+    cursor: default
