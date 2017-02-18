@@ -1,0 +1,78 @@
+.plan
+  padding: 0 0
+  margin-bottom: 65px
+  +MAX(767px)
+    padding: 25px 0
+    margin-bottom: 25px
+
+  &__container
+    +container
+
+  &__box
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -15px
+
+  &__item
+    width: 50%
+    padding: 0 15px
+    margin-bottom: 30px
+    +MAX(969px)
+      width: 100%
+
+  &__details
+    transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out
+    padding: 30px
+    border-radius: 7px
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0)
+    +MAX(1025px)
+      background-color: white
+      box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.15)
+
+    &:hover
+      background-color: white
+      box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.15)
+
+
+  &__labels
+    display: block
+    width: 100%
+    margin-bottom: 10px
+
+  &__label
+    transition: background-color .15s ease-in-out
+    margin-right: 5px
+    background-color: #e1e1e1
+    padding: 5px 7px
+    border-radius: 7px
+    color: white
+    +fontOpenSans
+    font-size: 11px
+    font-weight: 900
+    cursor: default
+    +MAX(1025px)
+      background-color: #bd8cbf
+
+    .plan__details:hover &
+      background-color: #bd8cbf
+
+  &__title
+    +fontOpenSans
+    font-size: 22px
+    font-weight: 600
+    color: #2e3b4e
+    margin-bottom: 5px
+    cursor: default
+
+  &__text
+    +fontOpenSans
+    font-size: 14px
+    font-weight: 400
+    color: #8297a7
+    margin-bottom: 5px
+    text-align: justify
+    cursor: default
+    +MAX(767px)
+      font-size: 12px
+
+

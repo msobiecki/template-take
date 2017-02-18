@@ -1,13 +1,19 @@
 .colored
-  margin-bottom: 25px
+  margin-bottom: 65px
+  +MAX(767px)
+    margin-bottom: 25px
 
   &__container
     +container
+
   &__box
     display: flex
     flex-wrap: wrap
 
   &__item
+    background-position: center center
+    background-size: cover
+
     width: 33.33%
     padding: 40px
     color: white
@@ -15,7 +21,7 @@
       padding: 20px
     +MAX(767px)
       width: 100%
-      padding: 10px 15px
+      padding: 25px 25px
 
     &.-large
       width: 66.66%
@@ -53,6 +59,8 @@
     color: white
     margin-bottom: 15px
     cursor: default
+    +MAX(767px)
+      font-size: 12px
 
   &__link
     +fontOpenSans

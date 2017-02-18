@@ -1,5 +1,7 @@
 .details
-  margin-bottom: 25px
+  margin-bottom: 65px
+  +MAX(767px)
+    margin-bottom: 25px
 
   &__container
     +container
@@ -34,7 +36,7 @@
     font-size: 13px
     font-weight: 600
     color: #67676d
-    margin-bottom: 5px
+    margin-bottom: 15px
     cursor: default
 
   &__text
@@ -45,3 +47,5 @@
     margin-bottom: 5px
     text-align: justify
     cursor: default
+    +MAX(767px)
+      font-size: 12px
