@@ -63,7 +63,7 @@
         arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        adaptiveHeight: true,
+        adaptiveHeight: false,
         autoplay: true,
         speed: 3000
       });

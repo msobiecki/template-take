@@ -2,8 +2,8 @@
 /* Vendors
  * Contains all the 3rd party styles
  * ========================================================================== */
-@import url(../../node_modules/animate.css/animate.min.css);
-@import url(../../node_modules/slick-carousel/slick/slick.css);
+@import url(../node_modules/animate.css/animate.min.css);
+@import url(../node_modules/slick-carousel/slick/slick.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=latin-ext");
 @import url("https://fonts.googleapis.com/css?family=Arvo:400,400i,700,700i");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
@@ -1343,6 +1343,7 @@ a.banner__item:hover .banner__text {
   font-size: 60px;
   line-height: 1;
   margin-bottom: 25px;
+  cursor: default;
 }
 
 @media (max-width: 767px) {
@@ -1358,6 +1359,7 @@ a.banner__item:hover .banner__text {
   line-height: 1.8;
   text-align: justify;
   margin-bottom: 25px;
+  cursor: default;
 }
 
 @media (max-width: 767px) {
@@ -1426,6 +1428,7 @@ a.banner__item:hover .banner__text {
   line-height: 1;
   margin-bottom: 25px;
   color: white;
+  cursor: default;
 }
 
 @media (max-width: 767px) {
