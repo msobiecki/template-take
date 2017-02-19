@@ -1,16 +1,20 @@
 extends layout/_layout
 
 block content
-  //TODO Banner
+  include  components/banner/_banner
 
-  include components/textfield/_textfield
+  // Content Blocks
+  section.content__blocks#contentPage
 
-  include components/colored/_colored
+    include components/textfield/_textfield
 
-  include components/details/_details
+    include components/colored/_colored
 
-  include components/abstract/_abstract
+    include components/details/_details
 
-  include components/reasons/_reasons
+    include components/abstract/_abstract
 
-  include components/plan/_plan
+    include components/reasons/_reasons
+
+    include components/plan/_plan
+

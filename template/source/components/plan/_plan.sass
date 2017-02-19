@@ -75,4 +75,23 @@
     +MAX(767px)
       font-size: 12px
 
+  &__link
+    transition: background-color .15s ease-in-out
+    +fontOpenSans
+    font-size: 14px
+    font-weight: 600
+    background-color: #82ca9c
+    color: white
+    height: 46px
+    min-width: 153px
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    border-radius: 3px
 
+
+    .plan__details:hover &
+      background-color: darken(#82ca9c, 10)
+
+    &:hover
+      background-color: darken(#82ca9c, 15) !important
