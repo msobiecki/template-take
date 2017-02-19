@@ -300,6 +300,222 @@ html {
   background-color: white;
 }
 
+.footer {
+  background-color: #192431;
+  padding: 80px 0;
+}
+
+@media (max-width: 969px) {
+  .footer {
+    padding: 45px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 25px 0;
+  }
+}
+
+.footer__container {
+  margin: 0 auto;
+  padding: 0 30px;
+  width: 100%;
+  max-width: 1230px;
+}
+
+.footer__container:before, .footer__container:after {
+  content: " ";
+  display: table;
+}
+
+.footer__container:after {
+  clear: both;
+}
+
+@media (max-width: 969px) {
+  .footer__container {
+    padding: 0 15px;
+  }
+}
+
+.footer__box {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footer__item {
+  padding: 0 15px;
+  width: 50%;
+}
+
+@media (max-width: 767px) {
+  .footer__item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__item:first-of-type {
+    -ms-flex-order: 2;
+        order: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__item:last-of-type {
+    -ms-flex-order: 1;
+        order: 1;
+  }
+}
+
+.footer-details__box {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+@media (max-width: 767px) {
+  .footer-details__box {
+    margin: 0 auto;
+  }
+}
+
+.footer-details__item {
+  width: 33.33%;
+  padding: 0 15px;
+  margin-bottom: 15px;
+}
+
+.footer-details__item:first-of-type {
+  width: 100%;
+}
+
+@media (max-width: 969px) {
+  .footer-details__item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-details__item {
+    padding: 0;
+  }
+}
+
+.footer-details__title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 15px;
+  cursor: default;
+}
+
+.footer-details__text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 5px;
+  text-align: justify;
+  cursor: default;
+}
+
+@media (max-width: 767px) {
+  .footer-details__text {
+    font-size: 12px;
+  }
+}
+
+.footer-details__menu {
+  display: block;
+  width: 100%;
+}
+
+.footer-details__link {
+  display: block;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 5px;
+  text-align: justify;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .footer-details__link {
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 0;
+  }
+}
+
+.footer-details__link:hover {
+  text-decoration: underline;
+}
+
+.footer-newsletter__title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 15px;
+  cursor: default;
+}
+
+.footer-newsletter__inputbox {
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.footer-newsletter__input {
+  outline: none;
+  width: 100%;
+  border: 0;
+  padding: 0 14px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #192431;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+.footer-newsletter__submit {
+  transition: background-color .15s ease-in-out;
+  background-color: #82ca9c;
+  color: white;
+  border: 0;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  font-size: 16px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.footer-newsletter__submit:hover {
+  background-color: #5ebb80;
+}
+
+.footer-newsletter__text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #57697f;
+  margin-bottom: 15px;
+  cursor: default;
+}
+
 /* Components
  * Contains each isolated component. Should ideally mimic the Angular component structure
  * ========================================================================== */
@@ -910,6 +1126,12 @@ a.banner__item:hover .banner__text {
       flex-wrap: wrap;
 }
 
+@media (max-width: 767px) {
+  .colored__box {
+    margin: 0 -15px;
+  }
+}
+
 .colored__item {
   background-position: center center;
   background-size: cover;
@@ -1271,7 +1493,7 @@ a.banner__item:hover .banner__text {
 
 @media (max-width: 767px) {
   .plan {
-    padding: 25px 0;
+    padding: 25px 0 0;
     margin-bottom: 25px;
   }
 }
@@ -1316,6 +1538,10 @@ a.banner__item:hover .banner__text {
   .plan__item {
     width: 100%;
   }
+}
+
+.plan__item:last-of-type {
+  margin-bottom: 0;
 }
 
 .plan__details {

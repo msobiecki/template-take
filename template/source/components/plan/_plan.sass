@@ -2,7 +2,7 @@
   padding: 0 0
   margin-bottom: 65px
   +MAX(767px)
-    padding: 25px 0
+    padding: 25px 0 0
     margin-bottom: 25px
 
   &__container
@@ -19,6 +19,9 @@
     margin-bottom: 30px
     +MAX(969px)
       width: 100%
+
+    &:last-of-type
+      margin-bottom: 0
 
   &__details
     transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out
