@@ -532,6 +532,7 @@ html {
 .banner__image {
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .banner__box {
