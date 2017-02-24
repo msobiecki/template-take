@@ -10,7 +10,7 @@
  *
  * Possible modification
  * # Create a slick-carousel
- * @class .js-banner.js-banner-slick
+ * @class .js-banner.-banner-slick
  * # If Fixed header (modification into .header e.g. [.header.-header-fixed] also [.header.-header-landingPage])
  * @class
  *
@@ -21,14 +21,13 @@
   var banner = {
     init: function () {
       this.catchDOM();
-      if (this.isElement()) {
-        if (this.isSlickInit()) {
+      if (isElement(this.$el)) {
+        if (isSlickInited(this.$el)) {
           this.generateSlick();
         }
+        this.bindEvents();
         this.setHeight();
-        this.onResize();
         this.toggleHide();
-        this.toggleEvent();
       }
     },
     catchDOM: function () {
@@ -37,20 +36,15 @@
       this.$item = this.$el.find('.banner__item');
       this.$image = this.$el.find('.banner__image');
       this.$toggler = this.$el.find('.banner__toggler');
-      this._windowHeight = $(window).height();
+      this.$content = this.$el.find('.banner__content');
 
       this.$header = $('.js-header');
       this.$headerBox = this.$header.find('.header__box');
-      this._headerHeight = this.$header.height();
     },
-    isElement: function () {
-      return this.$el.length > 0
+    bindEvents: function () {
+      $(window).resize(this.setHeight.bind(this));
+      this.$toggler.on('click', this.toggleScroll.bind(this));
     },
-    isSlickInit: function () {
-      return this.$el.hasClass('js-banner-slick')
-    },
-
-    //SLICK
     generateSlick: function () {
       this.$slider.slick({
         slide: '.banner__item',
@@ -61,6 +55,9 @@
           return '<div class="banner__dot"></div>';
         },
         arrows: false,
+        appendArrows: '.banner__arrows',
+        prevArrow: '<div class="banner__arrow -prev"><i class="material-icons">chevron_left</i></div>',
+        nextArrow: '<div class="banner__arrow -next"><i class="material-icons">chevron_right</i></div>',
         slidesToShow: 1,
         slidesToScroll: 1,
         adaptiveHeight: false,
@@ -72,6 +69,29 @@
       this.onInit();
       this.onChangeSlide();
     },
+    setHeight: function () {
+      var fullscreenBreaker = elementHeight(this.$content) + elementHeight(this.$headerBox) + 200;
+      if (fullscreenBreaker > windowHeight()) {
+        this.$el.css('height', fullscreenBreaker);
+        this.$slider.css('height', fullscreenBreaker);
+        this.$item.css('height', fullscreenBreaker);
+        this.$image.css('height', fullscreenBreaker);
+      } else {
+        if ($('.header.-header-landingPage.-header-fixed').length > 0) {
+          this.$el.css('height', windowHeight());
+          this.$slider.css('height', windowHeight());
+          this.$item.css('height', windowHeight());
+          this.$image.css('height', windowHeight());
+        } else {
+          this.$el.css('height', windowHeight() - elementHeight(this.$header));
+          this.$slider.css('height', windowHeight() - elementHeight(this.$header));
+          this.$item.css('height', windowHeight() - elementHeight(this.$header));
+          this.$image.css('height', windowHeight() - elementHeight(this.$header));
+        }
+      }
+    },
+
+
     onInit: function () {
       this.$slider.find('.slick-current .banner__content').addClass('-banner-content-show animated fadeIn');
     },
@@ -83,28 +103,6 @@
       });
     },
 
-    //OnResize
-    onResize: function () {
-      $(window).resize(this.setNewVariables.bind(this))
-    },
-    setNewVariables: function () {
-      this._windowHeight = $(window).height();
-      this._headerHeight = $('header').height();
-      this.setHeight();
-    },
-    setHeight: function () {
-      if ($('.header.-header-landingPage.-header-fixed').length > 0) {
-        this.$el.css('height', this._windowHeight);
-        this.$slider.css('height', this._windowHeight);
-        this.$item.css('height', this._windowHeight);
-        this.$image.css('height', this._windowHeight);
-      } else {
-        this.$el.css('height', this._windowHeight - this._headerHeight);
-        this.$slider.css('height', this._windowHeight - this._headerHeight);
-        this.$item.css('height', this._windowHeight - this._headerHeight);
-        this.$image.css('height', this._windowHeight - this._headerHeight);
-      }
-    },
     toggleHide: function () {
       this.$item.each(function () {
         if ($(this).attr('href')) {
@@ -113,9 +111,6 @@
           $(this).find('.banner__toggler i').addClass('animated infinite pulse');
         }
       })
-    },
-    toggleEvent: function () {
-      this.$toggler.on('click', this.toggleScroll.bind(this))
     },
     toggleScroll: function (event) {
       event.preventDefault();
@@ -138,6 +133,22 @@
       }
     }
   };
+
+  function isElement(item) {
+    return item.length > 0
+  }
+
+  function windowHeight() {
+    return $(window).height();
+  }
+
+  function elementHeight(item) {
+    return $(item).height();
+  }
+
+  function isSlickInited(item) {
+    return item.hasClass('-banner-slick')
+  }
 
   banner.init();
 })();
